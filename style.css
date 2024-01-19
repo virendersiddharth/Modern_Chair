@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+/* Universal Selector */
+*,*::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+    color: white;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.maincontent{
+    width: 80%;
+    max-width: 1080px;
+    margin: 6rem auto 3rem auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.maincontent .image{
+    width: 50%;
+    min-width: 300px;
+}
+
+.maincontent .image img{
+    width: 100%;
+    /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;  */
+}
+
+.maincontent .image img.shakeActive{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+    
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0) rotate(2deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-3px, 0, 0) rotate(-3deg);
+    }
+    40%,
+    60% {
+      transform: translate3d(3px, 0, 0) rotate(3deg);
+    }
+  }
+  
+
+
+/* Text content Box */
+
+.maincontent .textcontent{
+    width: 50%;
+    min-width: 350px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+}
+
+.maincontent .textcontent .minhead{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.maincontent .textcontent .name{
+    font-size: 4rem;
+}
+
+.maincontent .textcontent .price{
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+.maincontent .textcontent .price span{
+    font-size: 2rem;
+    margin-left: 1rem;
+    text-decoration: line-through;
+    opacity: .6;
+}
+
+
+/* Description Heading */
+
+.maincontent .textcontent .deschead{
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 2.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.maincontent .textcontent .deschead h3{
+    opacity: 0.3;
+    transition: 0.2s linear;
+}
+
+.maincontent .textcontent .deschead h3:hover{
+    opacity: 0.7;
+}
+
+.maincontent .textcontent .deschead h3.active{
+    opacity: 1;
+}
+
+.maincontent .textcontent .desccontent{
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+}
+
+.maincontent .textcontent .desccontent .desctext{
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(200%);
+    transition: 0.3s linear;
+}
+.maincontent .textcontent .desccontent .desctext.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.maincontent .textcontent .desccontent .detailtext{
+    /* font-size: ; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(200%);
+    transition: 0.3s linear;
+}
+.maincontent .textcontent .desccontent .detailtext.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.maincontent .textcontent .desccontent .detailtext .detail p{
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.maincontent .textcontent .desccontent .detailtext .detail p span{
+    font-size: 3rem;
+}
+
+
+.maincontent .textcontent .colorhead{
+    font-size: 2rem;
+    margin: 1.5rem 0 2rem 0;
+}
+
+.maincontent .textcontent .colorbox{
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.maincontent .textcontent .colorbox .box{
+    box-shadow: 0 0 5px black;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+
+.maincontent .textcontent .colorbox .box.active{
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    scale: 1.1;
+}
+
+/* Set color into Boxes */
+#box1{
+    background: url('images/color1.jpg');
+}
+
+#box2{
+    background: url('images/color2.jpg');
+}
+
+#box3{
+    background: url('images/color3.jpg');
+}
+
+#box4{
+    background: url('images/color4.jpg');
+}
+
+#box5{
+    background: url('images/color5.jpg');
+}
+
+#box6{
+    background: url('images/color6.jpg');
+}
+
+
+.maincontent .textcontent .btn{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    width: fit-content;
+    padding: 12px 40px;
+    margin-top: 4rem;
+    position: relative;
+    /* z-index: 10; */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.maincontent .textcontent .btn img{
+    /* font-family: ''; */
+    width: 20px;
+    z-index: 10;
+    filter: invert(100%);
+}
+
+.maincontent .textcontent .btn span{
+    z-index: 10;
+}
+
+.maincontent .textcontent .btn::after{
+    content: '';
+    background: #333;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+}
+
+.maincontent .textcontent .btn:hover::after{
+    background-color: #333;
+    opacity: 1;
+}
+
+.maincontent .textcontent .btn:hover{
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+    /* background-color: #333; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+
+    .maincontent .textcontent .desccontent{
+        height: auto;
+    }
+
+    /* .maincontent .textcontent {
+        text-align: center;
+    } */
+    
+}
+
+@media (max-width: 500px) {
+    html{
+        font-size: 50%;
+    }
+
+    .maincontent{
+        width: 80%;
+    }
+
+    .maincontent .textcontent .desccontent{
+        /* min-height: 70px; */
+        max-width: 500px;
+    }
+
+    .maincontent .textcontent .desccontent .desctext{
+        font-size: 1.5rem;
+        max-width: 300px;
+    }
+
+     .maincontent .textcontent .desccontent .detailtext .detail p{
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+
+    .maincontent .textcontent .desccontent .detailtext .detail p span{
+        font-size: 2.3rem;
+    }
+
+    
+    .maincontent .textcontent{
+        width: 80%;
+        min-width: 250px;
+    }    
+
+    .maincontent .textcontent .desccontent{
+        height: auto;
+    }
+
+    .maincontent .textcontent .colorbox .box{
+        height: 30px;
+        width: 30px;
+    }
+}
+
